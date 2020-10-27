@@ -42,51 +42,50 @@ type echo struct {
 	pult   bool
 	can    bool
 	modbus bool
-	rs485  bool
+	def    bool
 }
 
 func (e *echo) set(code string) {
 	c, _ := strconv.Atoi(code)
-
 	if c&1 != 0 {
+		e.def = true
+	} else {
+		e.def = false
+	}
+	if c&2 != 0 {
 		e.modem = true
 	} else {
 		e.modem = false
 	}
-	if c&2 != 0 {
+	if c&4 != 0 {
 		e.gps = true
 	} else {
 		e.gps = false
 	}
-	if c&4 != 0 {
+	if c&8 != 0 {
 		e.pspd = true
 	} else {
 		e.pspd = false
 	}
-	if c&8 != 0 {
+	if c&16 != 0 {
 		e.server = true
 	} else {
 		e.server = false
 	}
-	if c&16 != 0 {
+	if c&32 != 0 {
 		e.pult = true
 	} else {
 		e.pult = false
 	}
-	if c&32 != 0 {
+	if c&64 != 0 {
 		e.can = true
 	} else {
 		e.can = false
 	}
-	if c&64 != 0 {
+	if c&128 != 0 {
 		e.modbus = true
 	} else {
 		e.modbus = false
-	}
-	if c&128 != 0 {
-		e.rs485 = true
-	} else {
-		e.rs485 = false
 	}
 }
 func (e *echo) sayProtocol() []string {
@@ -187,6 +186,9 @@ func (c *Client) DeviceWorker() {
 		case <-c.stop:
 			return
 		case <-ticker.C:
+			if c.echo.def {
+				c.SendInfo()
+			}
 			list := c.echo.sayProtocol()
 			for _, l := range list {
 				c.writing <- l
