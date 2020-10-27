@@ -45,7 +45,7 @@ func sender(soc net.Conn) {
 	}
 	list := make([]dev, 0)
 	d := dev{
-		host:     "192.168.115.190",
+		host:     "192.168.115.159",
 		port:     "8888",
 		name:     "Отладочный",
 		login:    "login",

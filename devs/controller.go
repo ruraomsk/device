@@ -46,6 +46,7 @@ type Info struct {
 	Sysdelay     string `aura:"#SYS.DELAY"` //
 	Gsmsrvip     string `aura:"#GSM.SRVIP"` //
 	Gsmstate     string `aura:"#GSM.STATE"` //
+	Gsmerror     string `aura:"#GSM.ERROR"`
 }
 type Command struct {
 	IpserverGPRS string `aura:"#SRV.IPADR"` // команда и ответ

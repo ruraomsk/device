@@ -26,10 +26,11 @@ type Client struct {
 	stop    chan interface{}
 	deleted bool
 }
-func (c Client) SendInfo()  {
-	list:=aura.Marshal(c.Data.Info)
-	for _,l:=range list{
-		c.writing<-l
+
+func (c Client) SendInfo() {
+	list := aura.Marshal(c.Data.Info)
+	for _, l := range list {
+		c.writing <- l
 	}
 }
 
@@ -186,9 +187,9 @@ func (c *Client) DeviceWorker() {
 		case <-c.stop:
 			return
 		case <-ticker.C:
-			list:=c.echo.sayProtocol()
-			for _,l:=range list{
-				c.writing<-l
+			list := c.echo.sayProtocol()
+			for _, l := range list {
+				c.writing <- l
 			}
 		case command := <-c.reading:
 			c.makeCommand(command)
@@ -217,17 +218,18 @@ func (c *Client) makeCommand(com string) {
 		saveDevice(c.Data)
 		c.writing <- "OK"
 	}
-	cc:=new (Command)
+	com = strings.ReplaceAll(com, "=", ":")
+	cc := new(Command)
 	var ls []string
-	ls=append(ls, com)
-	err:=aura.UnMarshal(ls,cc)
-	if err!=nil {
-		c.writing<-"ERROR - "+com
+	ls = append(ls, com)
+	err := aura.UnMarshal(ls, cc)
+	if err != nil {
+		c.writing <- "ERROR - " + com
 		return
 	}
-	fmt.Printf("%v\n",cc)
-	if len(cc.Mode)!=0{
-		if strings.Compare(cc.Mode,"000")==0{
+	fmt.Printf("%v\n", cc)
+	if len(cc.Mode) != 0 {
+		if strings.Compare(cc.Mode, "000") == 0 {
 			c.echo.set(cc.Mode)
 			c.SendInfo()
 			return
@@ -236,23 +238,30 @@ func (c *Client) makeCommand(com string) {
 			return
 		}
 	}
-	if len(cc.Gate)!=0{
-		c.Data.Info.Gate=cc.Gate
+	if len(cc.Gate) != 0 {
+		c.Data.Info.Gate = strings.ReplaceAll(cc.Gate, "\"", "")
 		return
 	}
-	if len(cc.Ipcontroller)!=0{
-		c.Data.Info.Ipcontroller=cc.Ipcontroller
+	if len(cc.Ipcontroller) != 0 {
+		//
+		ls := strings.Split(cc.Ipcontroller, ",")
+		c.Data.Info.Ipcontroller = strings.ReplaceAll(ls[0], "\"", "")
 		return
 	}
-	if len(cc.IpserverGPRS)!=0{
-		c.Data.Info.IpserverGPRS=cc.IpserverGPRS
+	if len(cc.IpserverGPRS) != 0 {
+		ls := strings.Split(cc.IpserverGPRS, ",")
+		c.Data.Info.IpserverGPRS = strings.ReplaceAll(ls[0], "\"", "")
 		return
 	}
-	if len(cc.IpserverLAN)!=0{
-		c.Data.Info.IpserverLAN=cc.IpserverLAN
+	if len(cc.IpserverLAN) != 0 {
+		c.Data.Info.IpserverLAN = strings.ReplaceAll(cc.IpserverLAN, "\"", "")
 		return
 	}
-	c.writing<-"not define "+com
+	if len(cc.Mask) != 0 {
+		c.Data.Info.Mask = strings.ReplaceAll(cc.Mask, "\"", "")
+		return
+	}
+	c.writing <- "not define " + com
 }
 func Listen() {
 	ln, err := net.Listen("tcp", ":8888")
