@@ -3,7 +3,6 @@ package devs
 import (
 	"bufio"
 	"bytes"
-	"fmt"
 	"github.com/JanFant/TLServer/logger"
 	"github.com/JanFant/aura"
 	"net"
@@ -29,7 +28,11 @@ type Client struct {
 
 func (c Client) SendInfo() {
 	list := aura.Marshal(c.Data.Info)
+
 	for _, l := range list {
+		if isNeedInsertTime(l) {
+			l = insertTime(l)
+		}
 		c.writing <- l
 	}
 }
@@ -219,6 +222,11 @@ func (c *Client) makeCommand(com string) {
 	if isSave(com) {
 		saveDevice(c.Data)
 		c.writing <- "OK"
+		return
+	}
+	if isSetTime(com) {
+		logger.Info.Println("Установить время команда")
+		return
 	}
 	com = strings.ReplaceAll(com, "=", ":")
 	cc := new(Command)
@@ -229,7 +237,7 @@ func (c *Client) makeCommand(com string) {
 		c.writing <- "ERROR - " + com
 		return
 	}
-	fmt.Printf("%v\n", cc)
+	//fmt.Printf("%v\n", cc)
 	if len(cc.Mode) != 0 {
 		if strings.Compare(cc.Mode, "000") == 0 {
 			c.echo.set(cc.Mode)
