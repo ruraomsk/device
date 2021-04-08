@@ -4,9 +4,10 @@
     <list default="true" id="dc282d4f-9193-47d7-acac-49a206bfd11e" name="Default Changelist" comment="Исправлены мелкие ошибки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/device" beforeDir="false" afterPath="$PROJECT_DIR$/device" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/device.json" beforeDir="false" afterPath="$PROJECT_DIR$/device.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devs/controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/devs/controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devs/files.go" beforeDir="false" afterPath="$PROJECT_DIR$/devs/files.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/devs/netdevs.go" beforeDir="false" afterPath="$PROJECT_DIR$/devs/netdevs.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terminal/terminal.go" beforeDir="false" afterPath="$PROJECT_DIR$/terminal/terminal.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,78 +69,33 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Исправлены мелкие ошибки" />
     <option name="LAST_COMMIT_MESSAGE" value="Исправлены мелкие ошибки" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="691" y="354" width="527" height="323" key="#Notifications" timestamp="1603945410859">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="691" y="354" width="527" height="323" key="#Notifications/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1603945410859" />
-    <state x="368" y="373" width="1173" height="286" key="#SQL_Dialects" timestamp="1603417959164">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="368" y="373" width="1173" height="286" key="#SQL_Dialects/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1603417959164" />
-    <state x="555" y="180" width="800" height="671" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603418310892">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="555" y="180" width="800" height="671" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1603418310892" />
-    <state x="558" y="104" width="794" height="855" key="CommitChangelistDialog2" timestamp="1603960115459">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="558" y="104" width="794" height="855" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1603960115459" />
-    <state x="2478" y="108" width="794" height="855" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1603772380783" />
-    <state x="2663" y="288" width="424" height="478" key="FileChooserDialogImpl" timestamp="1603161345801">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="743" y="277" width="424" height="478" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1602476301348" />
-    <state x="2663" y="288" width="424" height="478" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1603161345801" />
-    <state width="1878" height="342" key="GridCell.Tab.0.bottom" timestamp="1604040682790">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1878" height="342" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1604040682790" />
-    <state width="1878" height="342" key="GridCell.Tab.0.center" timestamp="1604040682790">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1878" height="342" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1604040682790" />
-    <state width="1878" height="342" key="GridCell.Tab.0.left" timestamp="1604040682790">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1878" height="342" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1604040682790" />
-    <state width="1878" height="342" key="GridCell.Tab.0.right" timestamp="1604040682790">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1878" height="342" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1604040682790" />
-    <state width="1878" height="342" key="GridCell.Tab.1.bottom" timestamp="1604040682791">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1878" height="342" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1604040682791" />
-    <state width="1878" height="342" key="GridCell.Tab.1.center" timestamp="1604040682790">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1878" height="342" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1604040682790" />
-    <state width="1878" height="342" key="GridCell.Tab.1.left" timestamp="1604040682790">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1878" height="342" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1604040682790" />
-    <state width="1878" height="342" key="GridCell.Tab.1.right" timestamp="1604040682791">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1878" height="342" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1604040682791" />
-    <state x="464" y="154" key="SettingsEditor" timestamp="1603426986830">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="464" y="154" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1603426986830" />
-    <state x="555" y="252" width="800" height="548" key="Vcs.Push.Dialog.v2" timestamp="1603960080142">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="555" y="252" width="800" height="548" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1603960080142" />
-    <state x="2475" y="262" width="800" height="548" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1603772383416" />
-    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1604021848455">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1604021848455" />
   </component>
 </project>

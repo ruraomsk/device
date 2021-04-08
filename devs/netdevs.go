@@ -3,8 +3,8 @@ package devs
 import (
 	"bufio"
 	"bytes"
-	"github.com/JanFant/TLServer/logger"
 	"github.com/JanFant/aura"
+	"github.com/ruraomsk/TLServer/logger"
 	"net"
 	"strconv"
 	"strings"

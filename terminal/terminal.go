@@ -4,9 +4,9 @@ import (
 	"bufio"
 	"bytes"
 	"fmt"
+	"github.com/ruraomsk/device/devs"
 	"net"
 	"os"
-	"rura/device/devs"
 	"strings"
 	"time"
 )

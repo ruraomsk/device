@@ -2,7 +2,7 @@ package devs
 
 import (
 	"encoding/json"
-	"github.com/JanFant/TLServer/logger"
+	"github.com/ruraomsk/TLServer/logger"
 	"io/ioutil"
 	"os"
 )

@@ -5,11 +5,11 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
-	"github.com/JanFant/TLServer/logger"
+	"github.com/ruraomsk/TLServer/logger"
 	"github.com/ruraomsk/ag-server/pudge"
+	"github.com/ruraomsk/device/devs"
+	"github.com/ruraomsk/device/terminal"
 	"net"
-	"rura/device/devs"
-	"rura/device/terminal"
 	"strings"
 	"time"
 )
@@ -45,36 +45,29 @@ func sender(soc net.Conn) {
 	}
 	list := make([]dev, 0)
 	d := dev{
-		host:     "192.168.115.159",
-		port:     "8888",
+		host:     "192.168.115.85",
+		port:     "1100",
 		name:     "Отладочный",
 		login:    "login",
 		password: "password",
 	}
-	list = append(list, d)
-	rows, err := dbb.Query("select id,device from public.devices;")
+	//list = append(list, d)
+	rows, err := dbb.Query("select state from public.cross;")
 	if err != nil {
 		logger.Error.Printf("При чтении списка устройств %s", err.Error())
 		return
 	}
-	i := 10
 	for rows.Next() {
-		var c pudge.Controller
-		var id int
+		var c pudge.Cross
 		var jc []byte
-		_ = rows.Scan(&id, &jc)
+		_ = rows.Scan(&jc)
 		err = json.Unmarshal(jc, &c)
-		ips := strings.Split(c.IPHost, ":")
-		if len(ips) == 2 {
-			d.host = ips[0]
-			d.port = ips[1]
-			d.name = c.Name
-		} else {
-			d.host = fmt.Sprintf("192.168.1.%d", i)
-			d.port = "8888"
-			d.name = "Имитатор " + c.Name
-			i++
+		if len(c.WiFi) == 0 {
+			continue
 		}
+		d.host = c.WiFi
+		d.port = "1100"
+		d.name = c.Name
 		list = append(list, d)
 	}
 	writer := bufio.NewWriter(soc)
