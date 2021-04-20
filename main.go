@@ -28,7 +28,6 @@ func (d *dev) toString() string {
 }
 func sender(soc net.Conn) {
 
-	defer soc.Close()
 	var err error
 	logger.Info.Printf("Новый клиент списка устройств %s", soc.RemoteAddr().String())
 	dbinfo := fmt.Sprintf("host=%s user=%s password=%s dbname=%s sslmode=disable",
@@ -36,11 +35,37 @@ func sender(soc net.Conn) {
 	dbb, err := sql.Open("postgres", dbinfo)
 	if err != nil {
 		logger.Error.Printf("Запрос на открытие %s %s", dbinfo, err.Error())
+		soc.Close()
 		return
 	}
-	defer dbb.Close()
+	defer func() {
+		dbb.Close()
+		soc.Close()
+	}()
 	if err = dbb.Ping(); err != nil {
 		logger.Error.Printf("Ping %s", err.Error())
+		return
+	}
+	reader := bufio.NewReader(soc)
+	writer := bufio.NewWriter(soc)
+	lg, err := reader.ReadString('\n')
+	if err != nil {
+		logger.Error.Printf("Чтение от %s ошибка %s", soc.RemoteAddr().String(), err.Error())
+		return
+	}
+	lg = strings.ReplaceAll(lg, "\n", "")
+	lg = strings.ReplaceAll(lg, "\r", "")
+	lgs := strings.Split(lg, ":")
+	if len(lgs) != 2 {
+		logger.Error.Printf("Пришло от %s строка %s", soc.RemoteAddr().String(), lg)
+		_, _ = writer.WriteString("BAD\n")
+		writer.Flush()
+		return
+	}
+	if strings.Compare(lgs[0], "LOGIN") != 0 || strings.Compare(lgs[1], "PASSWORD") != 0 {
+		logger.Error.Printf("Неверный пользователь от %s строка %s", soc.RemoteAddr().String(), lg)
+		_, _ = writer.WriteString("BAD\n")
+		writer.Flush()
 		return
 	}
 	list := make([]dev, 0)
@@ -51,7 +76,6 @@ func sender(soc net.Conn) {
 		login:    "login",
 		password: "password",
 	}
-	//list = append(list, d)
 	rows, err := dbb.Query("select state from public.cross;")
 	if err != nil {
 		logger.Error.Printf("При чтении списка устройств %s", err.Error())
@@ -70,7 +94,6 @@ func sender(soc net.Conn) {
 		d.name = c.Name
 		list = append(list, d)
 	}
-	writer := bufio.NewWriter(soc)
 	for _, d := range list {
 		logger.Info.Printf(d.toString())
 		_, _ = writer.WriteString(d.toString() + "\n")
@@ -86,7 +109,8 @@ func sender(soc net.Conn) {
 		logger.Error.Printf("При передаче списка устройств %s", err.Error())
 		return
 	}
-	time.Sleep(10 * time.Second)
+
+	time.Sleep(5 * time.Second)
 }
 func sendDevices() {
 	ln, err := net.Listen("tcp", ":8088")
