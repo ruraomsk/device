@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="dc282d4f-9193-47d7-acac-49a206bfd11e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/device" beforeDir="false" afterPath="$PROJECT_DIR$/device" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/device.exe" beforeDir="false" afterPath="$PROJECT_DIR$/device.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windep.sh" beforeDir="false" afterPath="$PROJECT_DIR$/windep.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,17 +94,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Исправлены мелкие ошибки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлены мелкие ошибки" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/main.go</url>
-          <line>57</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="ВВеден логин и пароль" />
+    <option name="LAST_COMMIT_MESSAGE" value="ВВеден логин и пароль" />
   </component>
 </project>

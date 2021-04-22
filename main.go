@@ -68,6 +68,7 @@ func sender(soc net.Conn) {
 		writer.Flush()
 		return
 	}
+
 	list := make([]dev, 0)
 	d := dev{
 		host:     "192.168.115.85",
