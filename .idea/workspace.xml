@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc282d4f-9193-47d7-acac-49a206bfd11e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataBase/crossFunc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataBase/data.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataBase/init.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataBase/logger.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataBase/phoneFunc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataBase/sender.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataBase/template.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataBase/updateArea.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataBase/updateCrosses.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dumper/dumper.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup/data-setup.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/phone.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/device" beforeDir="false" afterPath="$PROJECT_DIR$/device" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/device.exe" beforeDir="false" afterPath="$PROJECT_DIR$/device.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/windep.sh" beforeDir="false" afterPath="$PROJECT_DIR$/windep.sh" afterDir="false" />
@@ -24,6 +41,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1ifdFK7rgOSkOqT0UTb68TXoLJs" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -39,11 +64,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TLServer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ag-server" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dataBase" />
       <recent name="$PROJECT_DIR$/terminal" />
     </key>
   </component>
@@ -96,5 +122,21 @@
     <MESSAGE value="Исправлены мелкие ошибки" />
     <MESSAGE value="ВВеден логин и пароль" />
     <option name="LAST_COMMIT_MESSAGE" value="ВВеден логин и пароль" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/dataBase/sender.go</url>
+          <line>82</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/main.go</url>
+          <line>53</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

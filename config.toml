@@ -1,0 +1,32 @@
+home="."					#Корневой каталог сервера
+location= "Asia/Omsk"   		#Временной пояс сервера
+port=8090
+region=7
+#Описание параметров доступа к БД
+[dataBase]
+	host= "192.168.115.115"
+	port= 5432
+	user= "postgres"
+	password= "162747"
+	dbname= "vpu"
+    maxopen=10
+[dumper]
+    make=true       #Включить создание dump
+    path="d:\\dump\\vpu"     #Путь для хранения дампов
+    time="04:00"    #Время в которое делается дамп
+[external]
+    make=true
+    host= "192.168.115.115"
+    port= 5432
+    user= "postgres"
+    password= "162747"
+    dbname= "agserv"
+    step=60         #Шаг проверки изменения в БД
+#значения по умолчанию для подключения к контроллеру
+[default]
+    host= "192.168.1.1"     #
+    port= 1000
+    ssid= "WIFI Network"
+    passid="rus162747"
+    login=""
+    password=""

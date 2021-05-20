@@ -9,3 +9,4 @@ else
     sudo mount -t cifs -o username=asdu,password=162747 \\\\192.168.115.115\\d /home/rura/mnt/ASDU
 fi
 sudo cp device.exe /home/rura/mnt/ASDU/device
+sudo cp config.toml /home/rura/mnt/ASDU/device
