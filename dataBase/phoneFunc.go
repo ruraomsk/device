@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/ruraomsk/TLServer/logger"
-	"strings"
+	"golang.org/x/crypto/bcrypt"
 )
 
 func IsPhoneCorrect(login string, password string) (bool, []int) {
@@ -22,7 +22,7 @@ func IsPhoneCorrect(login string, password string) (bool, []int) {
 	for rows.Next() {
 		rows.Scan(&us)
 		json.Unmarshal(us, &user)
-		if strings.Compare(password, user.Password) != 0 {
+		if bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(password)) != nil {
 			return false, result
 		}
 		return true, user.Areas

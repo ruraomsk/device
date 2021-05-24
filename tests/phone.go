@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/ruraomsk/TLServer/logger"
 	"github.com/ruraomsk/device/dataBase"
+	"github.com/ruraomsk/device/dataBase/secret"
 	"github.com/ruraomsk/device/setup"
 	"net"
 	"strconv"
@@ -12,14 +13,15 @@ import (
 )
 
 type changer struct {
-	writer *bufio.Writer
-	reader *bufio.Reader
-	ph     *dataBase.Phone
+	writer   *bufio.Writer
+	reader   *bufio.Reader
+	ph       *dataBase.Phone
+	password string
 }
 
 func (c *changer) readDB() bool {
 	fmt.Print("Тест БД")
-	c.writer.WriteString(c.ph.Login + ":" + c.ph.Password + ":" + "getList\n")
+	c.writer.WriteString(secret.CodeString(c.ph.Login+":"+c.password+":"+"getList") + "\n")
 	c.writer.Flush()
 	for {
 		s, err := c.reader.ReadString('\n')
@@ -27,6 +29,7 @@ func (c *changer) readDB() bool {
 			logger.Error.Printf("read DB %s", err.Error())
 			return false
 		}
+		s = secret.DecodeString(s)
 		if strings.HasPrefix(s, "end") {
 			return true
 		}
@@ -39,7 +42,7 @@ func (c *changer) readDB() bool {
 func (c *changer) setConnect(cr dataBase.Cross) bool {
 	fmt.Print("Тест соединения")
 	key := fmt.Sprintf("%d:%d", cr.Area, cr.ID)
-	c.writer.WriteString(c.ph.Login + ":" + c.ph.Password + ":setConnect:" + key + "\n")
+	c.writer.WriteString(secret.CodeString(c.ph.Login+":"+c.password+":setConnect:"+key) + "\n")
 	c.writer.Flush()
 	for {
 		s, err := c.reader.ReadString('\n')
@@ -47,6 +50,7 @@ func (c *changer) setConnect(cr dataBase.Cross) bool {
 			logger.Error.Printf("setConnect %s", err.Error())
 			return false
 		}
+		s = secret.DecodeString(s)
 		if strings.HasPrefix(s, "Ok") {
 			return true
 		}
@@ -59,7 +63,7 @@ func (c *changer) setConnect(cr dataBase.Cross) bool {
 func (c *changer) disConnect(cr dataBase.Cross) bool {
 	fmt.Print("Тест разрыва")
 	key := fmt.Sprintf("%d:%d", cr.Area, cr.ID)
-	c.writer.WriteString(c.ph.Login + ":" + c.ph.Password + ":outConnect:" + key + "\n")
+	c.writer.WriteString(secret.CodeString(c.ph.Login+":"+c.password+":outConnect:"+key) + "\n")
 	c.writer.Flush()
 	for {
 		s, err := c.reader.ReadString('\n')
@@ -67,7 +71,7 @@ func (c *changer) disConnect(cr dataBase.Cross) bool {
 			logger.Error.Printf("outConnect %s", err.Error())
 			return false
 		}
-		logger.Info.Println(s)
+		s = secret.DecodeString(s)
 		if strings.HasPrefix(s, "Ok") {
 			return true
 		}
@@ -81,7 +85,7 @@ func (c *changer) disConnect(cr dataBase.Cross) bool {
 func (c *changer) setPhase(cr dataBase.Cross, set int, now int) bool {
 	fmt.Printf("Ставим на %d %d фазу %d текущая %d Тест", cr.Area, cr.ID, set, now)
 	key := fmt.Sprintf("%d:%d:%d:%d", cr.Area, cr.ID, set, now)
-	c.writer.WriteString(c.ph.Login + ":" + c.ph.Password + ":setRU:" + key + "\n")
+	c.writer.WriteString(secret.CodeString(c.ph.Login+":"+c.password+":setRU:"+key) + "\n")
 	c.writer.Flush()
 	for {
 		s, err := c.reader.ReadString('\n')
@@ -89,7 +93,7 @@ func (c *changer) setPhase(cr dataBase.Cross, set int, now int) bool {
 			logger.Error.Printf("setRU %s", err.Error())
 			return false
 		}
-		logger.Info.Println(s)
+		s = secret.DecodeString(s)
 		if strings.HasPrefix(s, "Ok") {
 			return true
 		}
@@ -110,12 +114,14 @@ func PhoneTest() {
 	}
 	defer soc.Close()
 	ph := new(dataBase.Phone)
+	ch.password = "162747"
 	ph.Login = "rura"
-	ph.Password = "162747"
+	ph.Password = secret.GetHasPassword(ch.password)
 	ph.Areas = make([]int, 0)
 	ph.Status = dataBase.Status{Connection: false}
 	ch.ph = ph
 	ch.ph.GetPhone()
+	ph.Name = "Тестовый пользователь"
 	ch.ph.SetPhone()
 
 	ch.writer = bufio.NewWriter(soc)

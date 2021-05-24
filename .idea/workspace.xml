@@ -2,27 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc282d4f-9193-47d7-acac-49a206bfd11e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/crossFunc.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/data.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/init.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/logger.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/phoneFunc.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/sender.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/template.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/updateArea.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/updateCrosses.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dumper/dumper.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup/data-setup.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/phone.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataBase/secret/passwors.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/phoneFunc.go" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/phoneFunc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/sender.go" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/sender.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/device" beforeDir="false" afterPath="$PROJECT_DIR$/device" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/device.exe" beforeDir="false" afterPath="$PROJECT_DIR$/device.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/windep.sh" beforeDir="false" afterPath="$PROJECT_DIR$/windep.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/phone.go" beforeDir="false" afterPath="$PROJECT_DIR$/tests/phone.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +19,7 @@
       <list>
         <option value="Go Application" />
         <option value="Go File" />
+        <option value="package.json" />
       </list>
     </option>
   </component>
@@ -48,6 +34,18 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/main.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/dataBase/init.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/dataBase/template.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/dataBase/crossFunc.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/dataBase/secret/passwors.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/dataBase/sender.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/config.toml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/dataBase/data.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/dataBase/phoneFunc.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/tests/phone.go" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1ifdFK7rgOSkOqT0UTb68TXoLJs" />
   <component name="ProjectLevelVcsManager">
@@ -64,7 +62,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ag-server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../VPUserver" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
@@ -121,20 +120,16 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Исправлены мелкие ошибки" />
     <MESSAGE value="ВВеден логин и пароль" />
-    <option name="LAST_COMMIT_MESSAGE" value="ВВеден логин и пароль" />
+    <MESSAGE value="Написаны все запросы к серверу от планшетов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Написаны все запросы к серверу от планшетов" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/dataBase/sender.go</url>
-          <line>82</line>
+          <line>84</line>
           <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/main.go</url>
-          <line>53</line>
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
