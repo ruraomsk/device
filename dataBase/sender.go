@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/ruraomsk/TLServer/logger"
-	"github.com/ruraomsk/device/dataBase/secret"
+	"github.com/ruraomsk/device/secret"
 	"github.com/ruraomsk/device/setup"
 	"net"
 	"strconv"
