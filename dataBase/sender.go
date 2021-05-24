@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/ruraomsk/TLServer/logger"
-	"github.com/ruraomsk/device/dataBase/secret"
 	"github.com/ruraomsk/device/setup"
 	"net"
 	"strconv"
@@ -51,19 +50,19 @@ func workerPhone(socket net.Conn) {
 		}
 		message = strings.ReplaceAll(message, "\n", "")
 		message = strings.ReplaceAll(message, "\r", "")
-		message = secret.DecodeString(message)
+		message = DecodeString(message)
 		//fmt.Println(message)
 		ms := strings.Split(message, ":")
 		if len(ms) < 3 {
 			logger.Error.Printf("Пришло от %s строка %s", socket.RemoteAddr().String(), message)
-			_, _ = writer.WriteString(secret.CodeString("BAD") + "\n")
+			_, _ = writer.WriteString(CodeString("BAD") + "\n")
 			writer.Flush()
 			continue
 		}
 		is, areas := IsPhoneCorrect(ms[0], ms[1])
 		if !is {
 			logger.Info.Printf("Пользователь %s не зарегистрирован или неверный пароль", ms[0])
-			_, _ = writer.WriteString(secret.CodeString("BAD") + "\n")
+			_, _ = writer.WriteString(CodeString("BAD") + "\n")
 			writer.Flush()
 			continue
 		}
@@ -74,11 +73,11 @@ func workerPhone(socket net.Conn) {
 			crosses := GetCrosses(areas)
 			for _, cr := range crosses {
 				buf, _ := json.Marshal(&cr)
-				_, _ = writer.WriteString(secret.CodeString(string(buf)))
+				_, _ = writer.WriteString(CodeString(string(buf)))
 				_, _ = writer.WriteString("\n")
 				writer.Flush()
 			}
-			_, _ = writer.WriteString(secret.CodeString("end") + "\n")
+			_, _ = writer.WriteString(CodeString("end") + "\n")
 			writer.Flush()
 
 			mutexSender.Lock()
@@ -93,7 +92,7 @@ func workerPhone(socket net.Conn) {
 		gdata.External = false
 		if !IsCross(gdata.Key) {
 			logger.Info.Printf("Пользователь %s нет такого перекрестка %s", phone.Login, gdata.Key)
-			_, _ = writer.WriteString(secret.CodeString("BAD") + "\n")
+			_, _ = writer.WriteString(CodeString("BAD") + "\n")
 			writer.Flush()
 			continue
 		}
@@ -128,7 +127,7 @@ func workerPhone(socket net.Conn) {
 			} else {
 				mutex.Unlock()
 			}
-			_, _ = writer.WriteString(secret.CodeString(response))
+			_, _ = writer.WriteString(CodeString(response))
 			_, _ = writer.WriteString("\n")
 			writer.Flush()
 			continue
@@ -146,7 +145,7 @@ func workerPhone(socket net.Conn) {
 			gdata.Txt = fmt.Sprintf("Отмена РУ")
 			gdata.External = true
 			LoggChan <- gdata
-			_, _ = writer.WriteString(secret.CodeString("Ok") + "\n")
+			_, _ = writer.WriteString(CodeString("Ok") + "\n")
 			writer.Flush()
 			continue
 		}
@@ -169,7 +168,7 @@ func workerPhone(socket net.Conn) {
 			phone.SetPhone()
 			mutexSender.Unlock()
 			LoggChan <- gdata
-			_, _ = writer.WriteString(secret.CodeString("Ok") + "\n")
+			_, _ = writer.WriteString(CodeString("Ok") + "\n")
 			writer.Flush()
 			continue
 		}

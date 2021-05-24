@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc282d4f-9193-47d7-acac-49a206bfd11e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/dataBase/secret/passwors.go" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/passwors.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataBase/sender.go" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/sender.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/phone.go" beforeDir="false" afterPath="$PROJECT_DIR$/tests/phone.go" afterDir="false" />
     </list>
@@ -123,7 +124,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/dataBase/sender.go</url>
-          <line>84</line>
+          <line>83</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
