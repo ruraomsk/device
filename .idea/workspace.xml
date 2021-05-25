@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc282d4f-9193-47d7-acac-49a206bfd11e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/dataBase/secret/passwors.go" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/passwors.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/sender.go" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/sender.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/phone.go" beforeDir="false" afterPath="$PROJECT_DIR$/tests/phone.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +52,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
