@@ -13,7 +13,9 @@ func loadDevice() bool {
 		logger.Info.Printf("Попытка открыть файл %s", err.Error())
 		return false
 	}
-	defer file.Close()
+	defer func(file *os.File) {
+		_ = file.Close()
+	}(file)
 	data, err := ioutil.ReadAll(file)
 	if err != nil {
 		panic("Попытка читать файл " + err.Error())
@@ -30,7 +32,9 @@ func saveDevice(ctrl Controller) {
 	if err != nil {
 		panic("Попытка создать файл " + err.Error())
 	}
-	defer file.Close()
+	defer func(file *os.File) {
+		_ = file.Close()
+	}(file)
 	data, err := json.Marshal(ctrl)
 	if err != nil {
 		panic("Попытка закодировать " + err.Error())

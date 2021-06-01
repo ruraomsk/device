@@ -2,8 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc282d4f-9193-47d7-acac-49a206bfd11e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dataBase/passwords.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logsystem/logger.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/memDB/data.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/memDB/memDB.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/memDB/service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/memDB/tableCrosses.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/memDB/tablePhone.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/adf45744-a967-45c6-9e23-9de9bc3b08a1/storage_v2/_src_/database/agserv.PFlnqw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/adf45744-a967-45c6-9e23-9de9bc3b08a1/storage_v2/_src_/database/agserv.PFlnqw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/adf45744-a967-45c6-9e23-9de9bc3b08a1/storage_v2/_src_/database/agserv.PFlnqw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/crossFunc.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/logger.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/passwors.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/phoneFunc.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/sender.go" beforeDir="false" afterPath="$PROJECT_DIR$/sender/sender.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/updateArea.go" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/updateArea.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/updateCrosses.go" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/updateCrosses.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/device" beforeDir="false" afterPath="$PROJECT_DIR$/device" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/device.exe" beforeDir="false" afterPath="$PROJECT_DIR$/device.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devs/files.go" beforeDir="false" afterPath="$PROJECT_DIR$/devs/files.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dumper/dumper.go" beforeDir="false" afterPath="$PROJECT_DIR$/dumper/dumper.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/data-setup.go" beforeDir="false" afterPath="$PROJECT_DIR$/setup/data-setup.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/phone.go" beforeDir="false" afterPath="$PROJECT_DIR$/tests/phone.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +42,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Go Application" />
-        <option value="Go File" />
         <option value="package.json" />
+        <option value="Go File" />
       </list>
     </option>
   </component>
@@ -35,11 +63,10 @@
     <setting file="file://$PROJECT_DIR$/main.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/dataBase/init.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/dataBase/template.go" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/dataBase/crossFunc.go" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/dataBase/sender.go" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/12df5803-b863-4194-81be-f87b9573c42b/console.sql" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/sender/sender.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/config.toml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/dataBase/data.go" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/dataBase/phoneFunc.go" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/tests/phone.go" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1ifdFK7rgOSkOqT0UTb68TXoLJs" />
@@ -57,13 +84,15 @@
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sender" />
       <recent name="$PROJECT_DIR$/dataBase" />
       <recent name="$PROJECT_DIR$/terminal" />
     </key>
@@ -123,9 +152,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/dataBase/sender.go</url>
-          <line>83</line>
-          <option name="timeStamp" value="15" />
+          <url>file://$PROJECT_DIR$/tests/phone.go</url>
+          <line>137</line>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

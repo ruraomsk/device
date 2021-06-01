@@ -69,12 +69,14 @@ func updateCrosses() {
 		}
 	}
 	for _, w := range update {
-		_, err := db.Exec(w)
+		tx, err := db.Begin()
+		_, err = tx.Exec(w)
 		if err != nil {
 			logger.Error.Printf("запрос %s %s", w, err.Error())
 			work = false
 			return
 		}
+		_ = tx.Commit()
 	}
 	_ = rows.Close()
 	w = "select key,crossT from crosses;"
@@ -105,11 +107,13 @@ func updateCrosses() {
 	}
 	_ = rows.Close()
 	for _, w := range update {
-		_, err = db.Exec(w)
+		tx, err := db.Begin()
+		_, err = tx.Exec(w)
 		if err != nil {
 			logger.Error.Printf("запрос %s %s", w, err.Error())
 			work = false
 			return
 		}
+		_ = tx.Commit()
 	}
 }

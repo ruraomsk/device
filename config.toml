@@ -1,7 +1,7 @@
 home="."					#Корневой каталог сервера
 location= "Asia/Omsk"   		#Временной пояс сервера
 port=8090
-region=7
+region=1
 #Описание параметров доступа к БД
 [dataBase]
 	host= "192.168.115.115"
@@ -10,6 +10,7 @@ region=7
 	password= "162747"
 	dbname= "vpu"
     maxopen=10
+    interval=5
 [dumper]
     make=true       #Включить создание dump
     path="d:\\dump\\vpu"     #Путь для хранения дампов

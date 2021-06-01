@@ -34,12 +34,13 @@ type External struct {
 
 //DataBase настройки базы данных postresql
 type DataBase struct {
-	Host        string `toml:"host"`
-	Port        int    `toml:"port"`
-	User        string `toml:"user"`
-	Password    string `toml:"password"`
-	DBname      string `toml:"dbname"`
-	MaxOpenConn int    `toml:"maxopen"`
+	Host           string `toml:"host"`
+	Port           int    `toml:"port"`
+	User           string `toml:"user"`
+	Password       string `toml:"password"`
+	DBname         string `toml:"dbname"`
+	MaxOpenConn    int    `toml:"maxopen"`
+	UpdateInterval int    `toml:"interval"`
 }
 
 type Dumper struct {

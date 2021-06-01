@@ -4,6 +4,9 @@ import (
 	"fmt"
 	"github.com/ruraomsk/device/dataBase"
 	"github.com/ruraomsk/device/dumper"
+	"github.com/ruraomsk/device/logsystem"
+	"github.com/ruraomsk/device/memDB"
+	"github.com/ruraomsk/device/sender"
 	"github.com/ruraomsk/device/tests"
 	"runtime"
 	"time"
@@ -47,12 +50,17 @@ func main() {
 
 	stop := make(chan int)
 	extcon.BackgroundInit()
-
+	ready := make(chan interface{})
+	go memDB.Start(ready)
+	<-ready
 	go dumper.Start()
-	go dataBase.Start()
-	go dataBase.ListenPhone()
-	tests.PhoneTest()
-	extcon.BackgroundWork(time.Duration(1*time.Second), stop)
+	go logsystem.Start(ready)
+	<-ready
+	go sender.ListenPhone()
+	if err = tests.PhoneTest(); err != nil {
+		return
+	}
+	extcon.BackgroundWork(1*time.Second, stop)
 	logger.Info.Println("Exit devices working...")
 	fmt.Println("\nExit devices working...")
 }

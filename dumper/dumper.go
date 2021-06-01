@@ -10,9 +10,6 @@ import (
 	"time"
 )
 
-var err error
-var workStatistic bool
-
 func makeDump() {
 	if runtime.GOOS == "linux" {
 		logger.Error.Printf("Нет реализации для Linux!")
@@ -28,7 +25,7 @@ func makeDump() {
 	path := setup.Set.Dumper.Path + "/dump" + date + ".sql"
 	_, _ = file.WriteString("pg_dump -U" + setup.Set.DataBase.User + " -d" + setup.Set.DataBase.DBname +
 		" -C -c --column-inserts --if-exists --no-comments -f" + path + "\n")
-	file.Close()
+	_ = file.Close()
 	time.Sleep(5 * time.Second)
 	cmd := exec.Command("save.bat")
 	err = cmd.Run()

@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="agserv@localhost" read-only="true" uuid="adf45744-a967-45c6-9e23-9de9bc3b08a1">
+    <data-source source="LOCAL" name="postgres@vpu" uuid="12df5803-b863-4194-81be-f87b9573c42b">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <schema-control>AUTOMATIC</schema-control>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/agserv</jdbc-url>
+      <jdbc-url>jdbc:postgresql://192.168.115.115:5432/vpu</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="postgres@agserv" uuid="35b2e343-2238-44d6-b08f-9d74e9b5c7ac">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://192.168.115.115:5432/agserv</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
 </project>
