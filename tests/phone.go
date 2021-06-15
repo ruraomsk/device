@@ -136,7 +136,7 @@ func PhoneTest() error {
 	ph, err := memDB.GetPhone("newrura")
 	if err != nil {
 		ph = dataBase.Phone{Login: "newrura", Password: dataBase.GetHasPassword("162747"), Name: "Тестовый пользователь", Areas: make([]int, 0)}
-		ph.Areas = append(ph.Areas, 1, 2, 3)
+		ph.Areas = append(ph.Areas, 1, 2)
 		ph.Status = dataBase.Status{Connection: false}
 		memDB.SetPhone(ph)
 	}
@@ -154,34 +154,34 @@ func PhoneTest() error {
 	} else {
 		fmt.Println(" ok")
 	}
-	crosses := memDB.ListCrosses(ch.ph.Areas)
-	for _, c := range crosses {
-		if !ch.setConnect(c) {
-			fmt.Println(" не прошел")
-			return stoped
-		} else {
-			fmt.Println(" ok")
-		}
-		if !ch.setPhase(c, 5, 1) {
-			fmt.Println(" не прошел")
-			return stoped
-		} else {
-			fmt.Println(" ok")
-		}
-		if !ch.setPhase(c, 5, 5) {
-			fmt.Println(" не прошел")
-			return stoped
-		} else {
-			fmt.Println(" ok")
-		}
-		if !ch.disConnect(c) {
-			fmt.Println(" не прошел")
-			return stoped
-		} else {
-			fmt.Println(" ok")
-		}
-
-	}
+	//crosses := memDB.ListCrosses(ch.ph.Areas)
+	//for _, c := range crosses {
+	//	if !ch.setConnect(c) {
+	//		fmt.Println(" не прошел")
+	//		return stoped
+	//	} else {
+	//		fmt.Println(" ok")
+	//	}
+	//	if !ch.setPhase(c, 5, 1) {
+	//		fmt.Println(" не прошел")
+	//		return stoped
+	//	} else {
+	//		fmt.Println(" ok")
+	//	}
+	//	if !ch.setPhase(c, 5, 5) {
+	//		fmt.Println(" не прошел")
+	//		return stoped
+	//	} else {
+	//		fmt.Println(" ok")
+	//	}
+	//	if !ch.disConnect(c) {
+	//		fmt.Println(" не прошел")
+	//		return stoped
+	//	} else {
+	//		fmt.Println(" ok")
+	//	}
+	//
+	//}
 	ch.logout()
 	fmt.Println("Все тесты ok")
 	return nil

@@ -21,7 +21,9 @@ func updateCrosses() {
 	db, idb := GetDB()
 	defer FreeDB(idb)
 	cross = make(map[string]pudge.Cross)
-	w := fmt.Sprintf("select area,id,state from public.\"cross\" where region=%d;", setup.Set.Region)
+	//w := fmt.Sprintf("select area,id,state from public.\"cross\" where region=%d;", setup.Set.Region)
+	w := fmt.Sprintf("SELECT device,state FROM public.devices LEFT JOIN public.\"cross\" ON public.devices.id = public.\"cross\".idevice where region=%d;", setup.Set.Region)
+
 	rows, err := conExternal.Query(w)
 	if err != nil {
 		logger.Error.Printf("запрос %s %s", w, err.Error())
@@ -29,20 +31,21 @@ func updateCrosses() {
 		return
 	}
 	var (
-		area  int
-		id    int
-		state string
+		state  string
+		device string
 	)
 	var (
 		st  pudge.Cross
+		dv  pudge.Controller
 		buf []byte
 		cr  Cross
 	)
 	update := make([]string, 0)
 	for rows.Next() {
-		_ = rows.Scan(&area, &id, &state)
+		_ = rows.Scan(&device, &state)
 		_ = json.Unmarshal([]byte(state), &st)
-		key := fmt.Sprintf("%d:%d", area, id)
+		_ = json.Unmarshal([]byte(device), &dv)
+		key := fmt.Sprintf("%d:%d", st.Area, st.ID)
 		cross[key] = st
 		ww := fmt.Sprintf("select crossT from crosses where key='%s';", key)
 		rs, err := db.Query(ww)
@@ -61,7 +64,7 @@ func updateCrosses() {
 			cr.ID = st.ID
 			cr.Name = st.Name
 			cr.IDevice = st.IDevice
-			cr.Default()
+			cr.Default(dv.IPHost)
 			buf, _ = json.Marshal(&cr)
 			www := fmt.Sprintf("insert into crosses (key,crossT) values ('%s','%s')", key, string(buf))
 			update = append(update, www)

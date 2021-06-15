@@ -48,7 +48,7 @@ func main() {
 	}
 	fmt.Println("БД адаптирована...")
 
-	stop := make(chan int)
+	stop := make(chan interface{})
 	extcon.BackgroundInit()
 	ready := make(chan interface{})
 	go memDB.Start(ready)

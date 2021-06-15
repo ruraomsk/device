@@ -2,35 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc282d4f-9193-47d7-acac-49a206bfd11e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dataBase/passwords.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logsystem/logger.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memDB/data.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memDB/memDB.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memDB/service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memDB/tableCrosses.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memDB/tablePhone.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/adf45744-a967-45c6-9e23-9de9bc3b08a1/storage_v2/_src_/database/agserv.PFlnqw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/adf45744-a967-45c6-9e23-9de9bc3b08a1/storage_v2/_src_/database/agserv.PFlnqw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/adf45744-a967-45c6-9e23-9de9bc3b08a1/storage_v2/_src_/database/agserv.PFlnqw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/crossFunc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/logger.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/passwors.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/phoneFunc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/sender.go" beforeDir="false" afterPath="$PROJECT_DIR$/sender/sender.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/updateArea.go" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/updateArea.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/data.go" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/data.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dataBase/updateCrosses.go" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/updateCrosses.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/device" beforeDir="false" afterPath="$PROJECT_DIR$/device" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/device.exe" beforeDir="false" afterPath="$PROJECT_DIR$/device.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devs/files.go" beforeDir="false" afterPath="$PROJECT_DIR$/devs/files.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dumper/dumper.go" beforeDir="false" afterPath="$PROJECT_DIR$/dumper/dumper.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logsystem/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/logsystem/logger.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/data-setup.go" beforeDir="false" afterPath="$PROJECT_DIR$/setup/data-setup.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/phone.go" beforeDir="false" afterPath="$PROJECT_DIR$/tests/phone.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +65,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ag-server" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
@@ -117,6 +96,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -146,17 +135,7 @@
     <MESSAGE value="Исправлены мелкие ошибки" />
     <MESSAGE value="ВВеден логин и пароль" />
     <MESSAGE value="Написаны все запросы к серверу от планшетов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Написаны все запросы к серверу от планшетов" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/tests/phone.go</url>
-          <line>137</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Есть все запросы плюс внутренняя база данных" />
+    <option name="LAST_COMMIT_MESSAGE" value="Есть все запросы плюс внутренняя база данных" />
   </component>
 </project>

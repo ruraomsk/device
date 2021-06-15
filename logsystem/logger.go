@@ -71,8 +71,8 @@ func Start(ready chan interface{}) {
 					cross, _ := memDB.GetCross(l.Key)
 					extLogg := pudge.JSONLog{Region: strconv.Itoa(setup.Set.Region), Area: ks[0], ID: id, Description: cross.Name, Type: 0}
 					result, _ := json.Marshal(extLogg)
-					w := fmt.Sprintf("insert into public.logdevice (id,tm,crossinfo,txt) values(%d,'%s','%s','%s');",
-						cross.IDevice, string(pq.FormatTimestamp(time.Now())), result, l.Txt)
+					w := fmt.Sprintf("insert into public.logdevice (region,id,tm,crossinfo,txt) values(%d,%d,'%s','%s','%s');",
+						setup.Set.Region, cross.IDevice, string(pq.FormatTimestamp(time.Now())), result, l.Txt)
 					tx, err := con.Begin()
 					_, err = tx.Exec(w)
 					if err != nil {

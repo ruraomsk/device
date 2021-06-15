@@ -2,6 +2,7 @@ package dataBase
 
 import (
 	"github.com/ruraomsk/device/setup"
+	"strings"
 	"time"
 )
 
@@ -40,8 +41,17 @@ type Status struct {
 	CurrentFaze  int       `json:"cfaze"`    //Текущая фаза на устройстве
 }
 
-func (c *Cross) Default() {
-	c.Host = setup.Set.Default.Host
+func (c *Cross) Default(ipHost string) {
+	if ipHost != "" {
+		ips := strings.Split(ipHost, ":")
+		if len(ips) != 0 {
+			c.Host = ips[0]
+		} else {
+			c.Host = setup.Set.Default.Host
+		}
+	} else {
+		c.Host = setup.Set.Default.Host
+	}
 	c.Port = setup.Set.Default.Port
 	c.SSID = setup.Set.Default.SSID
 	c.PassID = setup.Set.Default.PassID
